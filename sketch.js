@@ -6,7 +6,7 @@ let clockDiameter;
 
 function setup() {
   createCanvas(720, 400);
-  stroke(255);
+  
 
   let radius = min(width, height) / 2;
   secondsRadius = radius * 0.71;

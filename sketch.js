@@ -19,7 +19,7 @@ function setup() {
 }
 
 function draw() {
-  background(230);
+
 
   // Draw the clock background
   noStroke();

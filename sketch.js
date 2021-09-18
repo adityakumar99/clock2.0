@@ -4,9 +4,30 @@ let minutesRadius;
 let hoursRadius;
 let clockDiameter;
 
+
+let song;
+
+function preload() {
+
+  song = loadSound('https://www.sonu.live/tarana/music/Zindagi.mp3');
+
+}
+
+
+
+
+
+
+
+
+
+
 function setup() {
   createCanvas(720, 400);
   
+  song.loop(); // song is ready to play during setup() because it was loaded during preload
+
+  background(0, 255, 0);
 
   let radius = min(width, height) / 2;
   secondsRadius = radius * 0.71;
@@ -54,3 +75,24 @@ function draw() {
   }
   endShape();
 }
+
+
+function mousePressed() {
+
+  if (song.isPlaying()) {
+
+    // .isPlaying() returns a boolean
+
+    song.pause(); // .play() will resume from .pause() position
+
+    background(255, 0, 0);
+
+  } else {
+
+    song.play();
+
+    background(0, 255, 0);
+
+  }
+}
+
